@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html ng-app="app" lang="es" ng-clock> 
+<head>
+	<title>Location</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-controller="VehiculesController">
+	<div class="container">
+
+		<div id="home" class="row ">
+				<div class="col-md-2 col-md-offset-4 game">
+					<img id="backgound"  onclick="next()" src="img/inicio_xhdpi.png">
+				</div>
+		</div>
+		
+		<div id="start_game" style="display:none">
+			<div class="row ">
+				<div class="col-md-2 col-md-offset-4 game">
+					<img id="backgound"  onclick="start()" src="img/historia_xhdpi.png">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4" style="top:500px;">
+					<p id="text_history" class="text">En el barrio me dicen Calidoso, me contaro que estás en Cali por unos dias y estas más aburrido que empanada sin ají. ¿Sabes qué?
+						veni tirate un borondo conmigo pa' que conozcas
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="questions" style="display:none">
+			<div class="row ">
+				<div class="col-md-2 col-md-offset-4 game">
+					<img id="background"  src="img/pregunta_fondo_amarillo/cometa_xhdpi.png">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4" style="top:360px;">
+					<p id="text_question" class="text-question">
+						¿Sabés que me encantaba hacer cuando pequeño? Ir a volar cometa al parque del Ingenio, si querés probar pegate otro borondo por Cali en el mes de:
+					</p>
+					<div class="row">
+						<div class="col-md-4 option">
+							<img id="img_option_a" src="img/pregunta_fondo_amarillo/aAma_xhdpi.png">
+							<p id="txt_option_a"  onclick="optionA()" class="select-option">Agosto</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 option">
+							<img id="img_option_b"  src="img/pregunta_fondo_amarillo/bAma_xhdpi.png">
+							<p id="txt_option_b" onclick="optionB()" class="select-option">Marzo</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 option">
+							<img id="img_option_c"  src="img/pregunta_fondo_amarillo/aAma_xhdpi.png">
+							<p id="txt_option_c" onclick="optionC()" class="select-option">Diciembre</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 option">
+							<img id="img_option_d"  src="img/pregunta_fondo_amarillo/bAma_xhdpi.png">
+							<p id="txt_option_d" onclick="optionD()"class="select-option">Junio</p>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<div id="score-game" class="row ">
+			<div class="col-md-2 col-md-offset-4 game">
+				<img id="score"  onclick="newGame()" src="img/rolo.png">
+			</div>
+		</div>
+		<div id="good-feedback" class="row ">
+			<div class="col-md-2 col-md-offset-4 game">
+				<img id="backgound"  onclick="goodFeedback()" src="img/aspero.png">
+			</div>
+		</div>
+		<div id="bad-feedback" class="row ">
+			<div class="col-md-2 col-md-offset-4 game">
+				<img id="backgound"  onclick="badFeedback()" src="img/paila.png">
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4" style="top:600px;">
+					<p id="text_feedback" class="text">En el barrio me dicen Calidoso, me contaro que estás en Cali por unos dias y estas más aburrido que empanada sin ají. ¿Sabes qué?
+						veni tirate un borondo conmigo pa' que conozcas
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/app.js"></script>
+</html>

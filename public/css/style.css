@@ -1,0 +1,41 @@
+body{
+	background-color: #FFC100;
+}
+.game > img{
+	position: absolute;
+	background-color: #ffffff;
+	width: 400px;
+	height: 710px;
+}
+.text{
+	width: 400px;
+	padding: 20px;
+}
+.text-question{
+	width: 400px;
+	height: 104px;
+	padding: 20px;
+	text-align: center;
+}
+.option{
+	width: 400px;
+	height: 60px;
+}
+.option > img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+.select-option{
+	width: 400px;
+	text-align: center;
+	position: absolute;
+	padding: 20px;
+	margin: 0px;
+}
+#good-feedback, #bad-feedback, #score-game{
+	display: none;
+}
