@@ -39,9 +39,15 @@
 					<img id="background"  src="img/cometa.png">
 				</div>
 			</div>
-			
+				s	
 			<div class="row">
-				<div class="col-md-4 col-md-offset-4" style="top:360px;">
+				<div class="col-md-4 col-md-offset-4" style="top:310px;">
+					<div style="height:50px;">
+						<div id="song" style="margin-left:42%;">
+							<button class="btn btn-default" id="ex1-play" onclick="play()">Play</button>
+							<button class="btn btn-warning" id="ex1-stop" onclick="stop()">Stop</button>
+						</div>
+						</div>
 					<p id="text_question" class="text-question">
 						¿Sabés que me encantaba hacer cuando pequeño? Ir a volar cometa al parque del Ingenio, si querés probar pegate otro borondo por Cali en el mes de:
 					</p>
@@ -76,6 +82,11 @@
 			<div class="col-md-2 col-md-offset-4 game">
 				<img id="score"  onclick="newGame()" src="img/rolo.png">
 			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4" style="top:600px;">
+					<b class="text" style="margin-left:33.33%">JUGAR DE NUEVO</b>
+				</div>
+			</div>
 		</div>
 		<div id="good-feedback" class="row ">
 			<div class="col-md-2 col-md-offset-4 game">
@@ -97,5 +108,6 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="js/howler.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 </html>

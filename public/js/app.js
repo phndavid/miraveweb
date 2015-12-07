@@ -22,6 +22,13 @@
 function main(){
 
 }
+var sound;
+function play(){
+    sound.stop().play();
+}
+function stop(){
+    sound.stop();
+}
 var score = 0;
 function backgroundScore(scores){
     if(scores==0){
@@ -55,6 +62,15 @@ var index = 0;
 var actualQuestion = 0;
 function nextQuestion(){
 	var q = Math.floor((Math.random()*questions.length));
+
+    if(questions[q].sound){
+        document.getElementById("song").style.display = "block";
+        sound = new Howl({
+          urls: ['sound/'+questions[q].url_sound]
+        });
+    }else{
+        document.getElementById("song").style.display = "none";        
+    }
 	changeQuestion(questions[q].ask);
 	changeBackground("img/"+questions[q].img);
 	var answers = answerswithoutRepeating();
@@ -232,6 +248,7 @@ function optionD(){
  var questions = [{
                 id: "1",
                 type:"Fiambre",
+                sound: false,
                 img: "cholado.png",
                 ask:"Mirá panita, llegamos a las canchas Panamericanas vé. Te voy a invitar a un cholao.\n" +
                 "¿Vos de qué crees que está hecha esta vaina?\n",
@@ -245,6 +262,7 @@ function optionD(){
         {
                 id : "2",
                 type :"Fiambre",
+                sound: false,
                 img: "empanada.png",
                 ask : "Llavecita vámonos pa’ la fritanga de Doña Rosario, vení y te invito a una empanada. \n" +
                 "¿Con qué será que bajamos esto?\n",
@@ -259,6 +277,8 @@ function optionD(){
         {
                 id:"3",
                 type:"Fiambre",
+                sound: true,
+                url_sound: "mazamorra.wav",
                 img:"mazamorra.png",
                 ask:"¡Uy, escuchá eso! Por ahí viene el de…",
                 option_a:"La Manzamora y champus",
@@ -272,6 +292,7 @@ function optionD(){
         {
                 id:"4",
                 type:"Fiambre",
+                sound: false,
                 img:"napa.png",
                 ask:"¡Uy no! Esa empanda me quedó en un diente, pidamosle a Doña Rosario…",
                 option_a:"La ñapa",
@@ -284,6 +305,7 @@ function optionD(){
         {
                 id:"5",
                 type:"Fiambre",
+                sound: false,
                 img:"",
                 ask:"Amigazo, vos que crees que cuál de estas vainas es un pandebono.",
                 option_a:"Imagen",
@@ -299,6 +321,8 @@ function optionD(){
         ,{
                 id:"6",
                 type:"Guaguanco",
+                sound: true,
+                url_sound: "vea.wav",
                 img:"oiga.png",
                 ask:"Panita cómo se llama este tema, ‘Oilo’.",
                 option_a:"Oiga mire vea",
@@ -311,6 +335,7 @@ function optionD(){
         {
                 id:"7",
                 type:"Guaguanco",
+                sound: false,
                 img:"radio.png",
                 ask:"Ve bacán, escuchá la canción que está sonando en la radio: “¡Del puente para allá es ________, del puente para acá está Cali!”",
                 option_a:"Juanchito",
@@ -323,6 +348,7 @@ function optionD(){
         {
                 id:"8",
                 type:"Guaguanco",
+                sound: false,
                 img:"calenas.png",
                 ask:"Mirá esa vieja Ve, es que definitivamente las caleñas son como:",
                 option_a:"Las flores",
@@ -335,8 +361,9 @@ function optionD(){
         {
                 id:"9",
                 type:"Guaguanco",
+                sound: false,
                 img:"salsa.png",
-                ask:"Sabes qué? vámonos azotar baldosa al ritmo de:",
+                ask:"¿Sabes qué? vámonos azotar baldosa al ritmo de:",
                 option_a:"La Salsa",
                 option_b:"Reguetton",
                 option_c:"Merengue",
@@ -350,6 +377,7 @@ function optionD(){
         ,{
                 id:"10",
                 type:"Pa pegarnos el borondo",
+                sound: false,
                 img:"pance.png",
                 ask:"Si te vas a quedar hasta el domingo, te invito a que tiremos nado en:",
                 option_a:"El Río Pance",
@@ -362,6 +390,7 @@ function optionD(){
         {
                 id:"11",
                 type:"Pa pegarnos el borondo",
+                sound: false,
                 img:"tresCruces.png",
                 ask:"Ve te veo como gordo, deberíamos de ir mañana a quemar esas empanaditas a:",
                 option_a:"Cerro de las tres cruces",
@@ -374,6 +403,7 @@ function optionD(){
         {
                 id:"12",
                 type:"Pa pegarnos el borondo",
+                sound: false,
                 img:"cuenteros.png",
                 ask:"Pelao estás como achantado, vamos a tirar caja escuchando a los cuenteros en:",
                 option_a:"San Antonio",
@@ -386,6 +416,7 @@ function optionD(){
         {
                 id:"13",
                 type:"Pa pegarnos el borondo",
+                sound: false,
                 img:"ermita.png",
                 ask:"Tengo ganas de salir a darme un borondo, camina pal Bulevar del Río y de paso te presento:",
                 option_a:"La iglesia la Ermita",
@@ -401,6 +432,7 @@ function optionD(){
         ,{
                 id:"14",
                 type:"Cultura",
+                sound: false,
                 img:"feria.png",
                 ask:"Parcerito, vos me caíste muy bien, te invito a que vengas el 25 de diciembre para que disfrutemos de:",
                 option_a:"La Feria de Cali",
@@ -413,6 +445,7 @@ function optionD(){
         {
                 id:"15",
                 type:"Cultura",
+                sound: false,
                 img:"alumbrado.png",
                 ask:"Panita, si vas a volver por estos lados en diciembre me avisás para que vayamos al Bulevar del Río y veas lo bonito que es:",
                 option_a:"El Alumbrado de Cali",
@@ -425,6 +458,7 @@ function optionD(){
         {
                 id:"16",
                 type:"Cultura",
+                sound: false,
                 img:"macetas.png",
                 ask:"Panita, ¿Vos no tenés ahijados? Aquí en Cali le podés dar el mejor regalo, comprale unas:",
                 option_a:"Macetas",
@@ -437,6 +471,7 @@ function optionD(){
         {
                 id:"17",
                 type:"Cultura",
+                sound: false,
                 img:"cometa.png",
                 ask:"¿Sabés que me encantaba hacer cuando pequeño? Ir a volar cometa al parque del Ingenio, si querés probar pegate otro borondo por Cali en el mes de:",
                 option_a:"Agosto",
@@ -452,6 +487,7 @@ function optionD(){
         ,{
                 id:"18",
                 type:"Palabras tipicas",
+                sound: false,
                 img:"palabras.png",
                 ask:"Mirá, la gente a veces me dice que los caleños hablamos muy raro vé, ¿Vos si me entendes si te digo que pidas una ‘chuspa’?",
                 option_a:"Bolsa",
@@ -464,6 +500,7 @@ function optionD(){
         {
                 id:"19",
                 type:"Palabras tipicas",
+                sound: false,
                 img:"palabras.png",
                 ask:"Mirá, la gente a veces me dice que los caleños hablamos muy raro vé, ¿Vos si me entendes si te digo que vayamos por el ‘fiambre’?",
                 option_a:"La comida",
@@ -476,6 +513,7 @@ function optionD(){
         {
                 id:"20",
                 type:"Palabras tipicas",
+                sound: false,
                 img:"palabras.png",
                 ask:"Panita, por ahí dicen la malas lenguas que en Cali todos somos ‘melómanos’, ¡Y la verdad es que sí! ¿Vos si sabes de qué te estoy hablando?",
                 option_a:"Fanáticos de la salsa y la música",
@@ -488,6 +526,7 @@ function optionD(){
         {
                 id:"21",
                 type:"Palabras tipicas",
+                sound: false,
                 img:"palabras.png",
                 ask:"Vos a mí me caíste muy bien vé, de ahora en adelante vamos a ser panitas, ¿Si me entendés?",
                 option_a:"Amigos",

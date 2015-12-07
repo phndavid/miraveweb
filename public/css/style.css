@@ -1,6 +1,10 @@
 body{
 	background-color: #FFC100;
 }
+.game{
+	cursor: pointer;	
+}
+
 .game > img{
 	position: absolute;
 	background-color: #ffffff;
@@ -10,16 +14,18 @@ body{
 .text{
 	width: 400px;
 	padding: 20px;
+	text-align: center;
 }
 .text-question{
 	width: 400px;
-	height: 104px;
+	height: 80px;
 	padding: 20px;
 	text-align: center;
 }
 .option{
 	width: 400px;
 	height: 60px;
+	cursor: pointer;
 }
 .option > img{
 	position: absolute;
@@ -29,6 +35,9 @@ body{
 	padding-right: 10px;
 	padding-bottom: 10px;
 }
+.option:hover{
+	-webkit-filter: grayscale(60%);
+}
 .select-option{
 	width: 400px;
 	text-align: center;
@@ -36,6 +45,6 @@ body{
 	padding: 20px;
 	margin: 0px;
 }
-#good-feedback, #bad-feedback, #score-game{
+#good-feedback, #bad-feedback, #score-game,#song{
 	display: none;
 }
